@@ -1,0 +1,65 @@
+@startuml
+top to bottom direction
+hide empty methods
+
+class Supplier{
+    string compName
+}
+
+class Customer{
+    string firstName
+    string lastName
+}
+
+class Purchase{
+    Customer cust
+    Product Product
+}
+
+class Receipt{
+    Consultant consultant
+    Purchase purchase
+}
+
+class Employee{
+
+}
+
+class Consultant{
+
+}
+
+class Color{
+
+}
+
+class Location{
+
+}
+
+class Worker{
+
+}
+
+class Shippment{
+    Worker worker
+    Purchase Purchase
+}
+
+class Window{
+
+}
+
+Supplier --> Window
+Window --> Customer
+(Window, Customer) ..  Purchase
+Employee --|> Consultant
+Receipt -- Purchase
+Consultant -- Receipt
+Color -right- Window
+Location -- Supplier
+Worker -- Shippment
+Shippment -- Purchase
+Employee --|> Worker
+
+@enduml
