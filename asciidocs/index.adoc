@@ -19,5 +19,3 @@ ifdef::backend-html5[]
 plantuml::plantuml/ERD.puml[]
 
 
-=== Header 2
-
