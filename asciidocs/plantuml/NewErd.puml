@@ -2,16 +2,38 @@
 top to bottom direction
 hide empty methods
 
+enum Properties{
+    //Panzerglas, UV-Schutz,...
+}
+
+Properties -- Glasspane
+
 class Glasspane{
+    // 100 x 100
+    String dimensions
+
+    //glasdicke
+    double thickness
 
 }
 
-class Frame{
+enum Material{
+    //Holz-Alu, Kunststoff-Alu...
+}
 
+Material -- Framebar
+
+class Framebar{
+    String material
+    int length
 }
 
 class Window{
-
+    double width
+    double height
+    Framebar frame
+    Glasspane glass
+    Order order
 }
 
 class Worker{
@@ -19,40 +41,54 @@ class Worker{
 }
 
 class Employee{
-
+    int empNo
+    String firstName
+    String lastName
+    Double salary
+    int hours
 }
 
 class Customer{
-
+    int customerId
 }
 
 class Driver{
-
 }
 
 class LKW{
-
+    String model
 }
 
 class Order{
-
+   Shippment shippment
+   Location location
 }
 
 class Suplier {
-
+    String Name
+    String phoneNumber
+    double Shippmentcost
 }
 
 class Location{
+    String Adress
+    Customer customer
+}
 
+class Shippment{
+    Driver driver
+    LKW lkw
+    DateTime date
 }
 
 Glasspane "1" -- "*" Window
-Frame "1" -- "*" Window
+Framebar "1" -- "*" Window
 Worker "1" -- "*" Window
 Employee <|-- Worker
 Employee <|-- Driver
 
 LKW "1" -- "*" Shippment
+
 
 Driver "1" -- "*" Shippment
 
