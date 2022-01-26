@@ -13,7 +13,7 @@ class Customer{
 
 class Purchase{
     Customer cust
-    Product Product
+    List<WindowOrder> orders
 }
 
 class Receipt{
@@ -26,10 +26,6 @@ class Employee{
 }
 
 class Consultant{
-
-}
-
-class Color{
 
 }
 
@@ -47,19 +43,40 @@ class Shippment{
 }
 
 class Window{
-
+    List<Glass> panels
+    Frame frame
 }
 
-Supplier --> Window
-Window --> Customer
-(Window, Customer) ..  Purchase
+class WindowOrder{
+    Window window
+    int amount
+}
+
+class Glass{
+    double thickness
+    double height
+    double width
+    List<trait> traits
+}
+
+class Frame{
+    string material
+    double width
+    double height
+}
+
+Supplier -- Window
+Purchase -- Customer
+WindowOrder -- Window
+WindowOrder -- Purchase
 Employee --|> Consultant
 Receipt -- Purchase
 Consultant -- Receipt
-Color -right- Window
 Location -- Supplier
 Worker -- Shippment
 Shippment -- Purchase
 Employee --|> Worker
+Glass -- Window
+Frame -- Window
 
 @enduml
