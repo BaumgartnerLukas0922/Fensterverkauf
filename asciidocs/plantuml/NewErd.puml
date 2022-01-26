@@ -1,0 +1,69 @@
+@startuml
+top to bottom direction
+hide empty methods
+
+class Glasspane{
+
+}
+
+class Frame{
+
+}
+
+class Window{
+
+}
+
+class Worker{
+
+}
+
+class Employee{
+
+}
+
+class Customer{
+
+}
+
+class Driver{
+
+}
+
+class LKW{
+
+}
+
+class Order{
+
+}
+
+class Suplier {
+
+}
+
+class Location{
+
+}
+
+Glasspane "1" -- "*" Window
+Frame "1" -- "*" Window
+Worker "1" -- "*" Window
+Employee <|-- Worker
+Employee <|-- Driver
+
+LKW "1" -- "*" Shippment
+
+Driver "1" -- "*" Shippment
+
+Location "*" -- "1" Customer
+
+Shippment "1" -- "*" Order
+
+
+Suplier "1" -- "*" Glasspane
+
+Window "*" -- "1" Order
+
+Order "*" -- "1" Location
+@enduml
