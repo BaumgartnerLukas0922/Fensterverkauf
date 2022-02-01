@@ -6,11 +6,10 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "\"Order\"")
 public class Commission {
 
     @Id
-    int orderId;
+    int commissionId;
 
     @ManyToOne
     Shipment shipment;
@@ -52,7 +51,7 @@ public class Commission {
     @Override
     public String toString() {
         return "Order{" +
-                "orderId=" + orderId +
+                "commissionId=" + commissionId +
                 ", shipment=" + shipment +
                 ", location=" + location +
                 '}';
