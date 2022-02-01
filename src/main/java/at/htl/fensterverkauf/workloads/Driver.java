@@ -6,9 +6,6 @@ import javax.persistence.Id;
 @Entity
 public class Driver extends Employee{
 
-    @Id
-    int driverId;
-
     boolean hasDrivingLicense;
     boolean curDriving;
 
@@ -46,7 +43,6 @@ public class Driver extends Employee{
     @Override
     public String toString() {
         return "Driver{" +
-                "driverId=" + driverId +
                 ", hasDrivingLicense=" + hasDrivingLicense +
                 ", curDriving=" + curDriving +
                 '}';

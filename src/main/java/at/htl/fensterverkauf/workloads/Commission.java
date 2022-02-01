@@ -3,9 +3,11 @@ package at.htl.fensterverkauf.workloads;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 @Entity
-public class Order {
+@Table(name = "\"Order\"")
+public class Commission {
 
     @Id
     int orderId;
@@ -17,12 +19,12 @@ public class Order {
 
     //region Constructor
 
-    public Order(Shipment shipment, Location location) {
+    public Commission(Shipment shipment, Location location) {
         this.shipment = shipment;
         this.location = location;
     }
 
-    public Order() {
+    public Commission() {
     }
     //endregion
 

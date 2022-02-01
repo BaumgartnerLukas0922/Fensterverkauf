@@ -1,12 +1,9 @@
 package at.htl.fensterverkauf.workloads;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 
 @Entity
-public class Window {
+public class Glasswindow {
 
     @Id
     int windowId;
@@ -21,19 +18,19 @@ public class Window {
     Glasspane glasspane;
 
     @ManyToOne
-    Order order;
+    Commission commission;
 
     //region Constructor
 
-    public Window(double width, double height, Framebar framebar, Glasspane glasspane, Order order) {
+    public Glasswindow(double width, double height, Framebar framebar, Glasspane glasspane, Commission commission) {
         this.width = width;
         this.height = height;
         this.framebar = framebar;
         this.glasspane = glasspane;
-        this.order = order;
+        this.commission = commission;
     }
 
-    public Window() {
+    public Glasswindow() {
     }
     //endregion
 
@@ -71,15 +68,14 @@ public class Window {
         this.glasspane = glasspane;
     }
 
-    public Order getOrder() {
-        return order;
+    public Commission getOrder() {
+        return commission;
     }
 
-    public void setOrder(Order order) {
-        this.order = order;
+    public void setOrder(Commission commission) {
+        this.commission = commission;
     }
     //endregion
-
 
     @Override
     public String toString() {
@@ -89,7 +85,7 @@ public class Window {
                 ", height=" + height +
                 ", framebar=" + framebar +
                 ", glasspane=" + glasspane +
-                ", order=" + order +
+                ", commission=" + commission +
                 '}';
     }
 }

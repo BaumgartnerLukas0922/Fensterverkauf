@@ -2,8 +2,11 @@ package at.htl.fensterverkauf.workloads;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 
 @Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public class Employee{
     @Id
     int empNo;

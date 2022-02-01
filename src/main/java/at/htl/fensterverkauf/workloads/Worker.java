@@ -7,16 +7,13 @@ import java.util.List;
 @Entity
 public class Worker extends Employee{
 
-    @Id
-    int WorkerId;
-
     @OneToMany
-    List<Window> windows; //should be a List
+    List<Glasswindow> glasswindows; //should be a List
 
     //region Constructor
-    public Worker(String firstName, String lastName, Double salary, int hours, List<Window> windows) {
+    public Worker(String firstName, String lastName, Double salary, int hours, List<Glasswindow> glasswindows) {
         super(firstName, lastName, salary, hours);
-        this.windows = windows;
+        this.glasswindows = glasswindows;
     }
 
     public Worker() {
@@ -26,23 +23,21 @@ public class Worker extends Employee{
 
     //region Getter & Setter
 
-    public List<Window> getWindows() {
-        return windows;
+    public List<Glasswindow> getWindows() {
+        return glasswindows;
     }
 
-    public void setWindows(List<Window> windows) {
-        this.windows = windows;
+    public void setWindows(List<Glasswindow> glasswindows) {
+        this.glasswindows = glasswindows;
     }
 
-    public void addWindow(Window window){this.windows.add(window);}
+    public void addWindow(Glasswindow glasswindow){this.glasswindows.add(glasswindow);}
     //endregion
-
 
     @Override
     public String toString() {
         return "Worker{" +
-                "WorkerId=" + WorkerId +
-                ", windows=" + windows +
+                ", windows=" + glasswindows +
                 '}';
     }
 }
