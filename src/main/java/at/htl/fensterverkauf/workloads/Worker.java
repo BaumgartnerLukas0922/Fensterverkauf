@@ -26,14 +26,15 @@ public class Worker extends Employee{
 
     //region Getter & Setter
 
-    public Window getWindows() {
+    public List<Window> getWindows() {
         return windows;
     }
 
-    public void setWindows(Window windows) {
+    public void setWindows(List<Window> windows) {
         this.windows = windows;
     }
 
+    public void addWindow(Window window){this.windows.add(window);}
     //endregion
 
 
