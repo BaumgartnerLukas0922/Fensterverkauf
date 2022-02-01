@@ -9,7 +9,7 @@ import java.time.LocalDate;
 public class Shipment {
 
     @Id
-    int shippmentId;
+    int shipmentId;
 
     @ManyToOne
     Driver driver;
@@ -60,11 +60,10 @@ public class Shipment {
 
     //endregion
 
-
     @Override
     public String toString() {
-        return "Shippment{" +
-                "shippmentId=" + shippmentId +
+        return "Shipment{" +
+                "shipmentId=" + shipmentId +
                 ", driver=" + driver +
                 ", lkw=" + lkw +
                 ", date=" + date +
