@@ -1,4 +1,6 @@
-package at.htl.fensterverkauf.workloads;
+package at.htl.fensterverkauf.workloads.Window;
+
+import at.htl.fensterverkauf.workloads.Order.Commission;
 
 import javax.persistence.*;
 

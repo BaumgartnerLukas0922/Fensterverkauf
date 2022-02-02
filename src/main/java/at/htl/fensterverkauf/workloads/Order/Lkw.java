@@ -1,4 +1,4 @@
-package at.htl.fensterverkauf.workloads;
+package at.htl.fensterverkauf.workloads.Order;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

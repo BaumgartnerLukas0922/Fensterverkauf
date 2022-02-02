@@ -1,4 +1,6 @@
-package at.htl.fensterverkauf.workloads;
+package at.htl.fensterverkauf.workloads.Order;
+
+import at.htl.fensterverkauf.workloads.Person.Customer;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

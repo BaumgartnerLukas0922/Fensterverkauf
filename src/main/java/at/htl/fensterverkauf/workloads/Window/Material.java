@@ -1,4 +1,4 @@
-package at.htl.fensterverkauf;
+package at.htl.fensterverkauf.workloads.Window;
 
 public enum Material {
     HolzAlu,

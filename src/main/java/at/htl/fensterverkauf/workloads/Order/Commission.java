@@ -1,9 +1,8 @@
-package at.htl.fensterverkauf.workloads;
+package at.htl.fensterverkauf.workloads.Order;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.Table;
 
 @Entity
 public class Commission {

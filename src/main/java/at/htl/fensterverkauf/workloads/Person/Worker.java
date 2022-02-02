@@ -1,11 +1,13 @@
-package at.htl.fensterverkauf.workloads;
+package at.htl.fensterverkauf.workloads.Person;
 
+
+import at.htl.fensterverkauf.workloads.Window.Glasswindow;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
-public class Worker extends Employee{
+public class Worker extends Employee {
 
     @OneToMany
     List<Glasswindow> glasswindows; //should be a List

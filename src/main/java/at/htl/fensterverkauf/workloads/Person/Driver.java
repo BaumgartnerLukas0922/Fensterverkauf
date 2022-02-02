@@ -1,10 +1,9 @@
-package at.htl.fensterverkauf.workloads;
+package at.htl.fensterverkauf.workloads.Person;
 
 import javax.persistence.Entity;
-import javax.persistence.Id;
 
 @Entity
-public class Driver extends Employee{
+public class Driver extends Employee {
 
     boolean hasDrivingLicense;
     boolean curDriving;
