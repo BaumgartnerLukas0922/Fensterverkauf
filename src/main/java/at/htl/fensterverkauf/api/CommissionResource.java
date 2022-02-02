@@ -1,17 +1,21 @@
 package at.htl.fensterverkauf.api;
 
-import at.htl.fensterverkauf.Service.CommissionServiceImpl;
+import at.htl.fensterverkauf.Repository.CommissionRepo;
 import at.htl.fensterverkauf.workloads.Commission;
 import io.quarkus.qute.CheckedTemplate;
 import io.quarkus.qute.TemplateInstance;
-
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
 @Path("/commission")
 public class CommissionResource {
 
-    private CommissionServiceImpl commissionService = new CommissionServiceImpl();
+    private final CommissionRepo commissionRepo;
+
+    public CommissionResource(CommissionRepo commissionRepo) {
+        this.commissionRepo = commissionRepo;
+    }
 
     @CheckedTemplate
     public static class Templates {
@@ -19,18 +23,40 @@ public class CommissionResource {
     }
 
     @GET
-    @Produces(MediaType.TEXT_HTML)
-    public TemplateInstance getAll() {
-        return Templates.commission(commissionService.getAll());
+    @Path("all")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getAll() {
+        var comm = commissionRepo.getAll();
+        return Response.ok(comm).build();
     }
 
+    /*
     @GET
     @Path("{id}")
     @Produces(MediaType.TEXT_HTML)
     public TemplateInstance get(@PathParam("id") Integer id) {
-        return Templates.commission(commissionService.findCommission(id));
+        return Templates.commission(commissionRepo.findCommission(id));
     }
 
+    @POST
+    @Path("add")
+    @Produces(MediaType.TEXT_HTML)
+    public TemplateInstance addCommission(Commission commission) {
+        return Templates.commission(commissionRepo.addCommission(commission));
+    }
+
+
+    /*
+    @Transactional
+    @POST
+    public Response addCommission(CommissionDTO commissionDTO){
+        var result = commissionRepo.addCommission(commissionDTO);
+        return (result ? Response.ok() :
+                Response.status(Response.Status.BAD_REQUEST)).build();
+    }
+
+
+     */
     /*
     @GET
     @Path("{id}")

@@ -1,9 +1,6 @@
 package at.htl.fensterverkauf.workloads;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 public class Commission {
@@ -11,9 +8,9 @@ public class Commission {
     @Id
     public int commissionId;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     Shipment shipment;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     Location location;
 
     //region Constructor
