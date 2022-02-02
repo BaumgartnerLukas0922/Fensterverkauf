@@ -38,7 +38,6 @@ public class Driver extends Employee {
     }
     //endregion
 
-
     @Override
     public String toString() {
         return "Driver{" +

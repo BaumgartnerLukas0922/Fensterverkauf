@@ -1,7 +1,7 @@
 package at.htl.fensterverkauf.model;
 
-import at.htl.fensterverkauf.workloads.Location;
-import at.htl.fensterverkauf.workloads.Shipment;
+import at.htl.fensterverkauf.workloads.Order.Location;
+import at.htl.fensterverkauf.workloads.Order.Shipment;
 
 
 public class CommissionDTO {
