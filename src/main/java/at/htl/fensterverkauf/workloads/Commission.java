@@ -44,11 +44,6 @@ public class Commission {
     public void setLocation(Location location) {
         this.location = location;
     }
-
-    public int getCommissionId() {
-        return commissionId;
-    }
-
     //endregion
 
     @Override

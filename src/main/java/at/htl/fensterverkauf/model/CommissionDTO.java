@@ -1,10 +1,41 @@
 package at.htl.fensterverkauf.model;
 
-import at.htl.fensterverkauf.workloads.Commission;
-import io.quarkus.hibernate.orm.panache.PanacheRepository;
+import at.htl.fensterverkauf.workloads.Location;
+import at.htl.fensterverkauf.workloads.Shipment;
 
-import javax.enterprise.context.ApplicationScoped;
+public class CommissionDTO {
 
-@ApplicationScoped
-public class CommissionDTO implements PanacheRepository<Commission> {
+    private Shipment shipment;
+    private Location location;
+
+    //region Constructor
+
+    public CommissionDTO(Shipment shipment, Location location) {
+        this.shipment = shipment;
+        this.location = location;
+    }
+
+    public CommissionDTO() {
+    }
+    //endregion
+
+    //region Getter & Setter
+
+    public Shipment getShipment() {
+        return shipment;
+    }
+
+    public void setShipment(Shipment shipment) {
+        this.shipment = shipment;
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+
+    //endregion
 }
