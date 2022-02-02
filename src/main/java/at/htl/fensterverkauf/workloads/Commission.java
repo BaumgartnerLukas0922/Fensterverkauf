@@ -9,7 +9,7 @@ import javax.persistence.Table;
 public class Commission {
 
     @Id
-    int commissionId;
+    public int commissionId;
 
     @ManyToOne
     Shipment shipment;

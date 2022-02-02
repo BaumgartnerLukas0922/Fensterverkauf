@@ -1,23 +1,17 @@
 package at.htl.fensterverkauf.api;
 
-import at.htl.fensterverkauf.Service.CommissionService;
-import at.htl.fensterverkauf.model.CommissionDTO;
+import at.htl.fensterverkauf.Service.CommissionServiceImpl;
 import at.htl.fensterverkauf.workloads.Commission;
 import io.quarkus.qute.CheckedTemplate;
-import io.quarkus.qute.Location;
-import io.quarkus.qute.Template;
 import io.quarkus.qute.TemplateInstance;
 
-import javax.transaction.Transactional;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
-import java.net.URI;
 
 @Path("/commission")
 public class CommissionResource {
 
-    private CommissionService commissionService = new CommissionService();
+    private CommissionServiceImpl commissionService = new CommissionServiceImpl();
 
     @CheckedTemplate
     public static class Templates {
