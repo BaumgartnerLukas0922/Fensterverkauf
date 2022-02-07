@@ -1,4 +1,7 @@
-package at.htl.fensterverkauf.workloads.Order;
+package at.htl.fensterverkauf.workloads.Order.Commission;
+
+import at.htl.fensterverkauf.workloads.Order.Location.Location;
+import at.htl.fensterverkauf.workloads.Order.Shipment.Shipment;
 
 import javax.persistence.*;
 

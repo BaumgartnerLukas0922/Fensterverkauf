@@ -1,5 +1,6 @@
-package at.htl.fensterverkauf.workloads.Order;
+package at.htl.fensterverkauf.workloads.Order.Shipment;
 
+import at.htl.fensterverkauf.workloads.Order.Lkw;
 import at.htl.fensterverkauf.workloads.Person.Driver;
 
 import javax.persistence.*;

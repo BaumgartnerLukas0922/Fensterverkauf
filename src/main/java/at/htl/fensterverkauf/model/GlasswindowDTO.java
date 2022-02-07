@@ -1,6 +1,6 @@
 package at.htl.fensterverkauf.model;
 
-import at.htl.fensterverkauf.workloads.Order.Commission;
+import at.htl.fensterverkauf.workloads.Order.Commission.Commission;
 import at.htl.fensterverkauf.workloads.Window.Framebar;
 import at.htl.fensterverkauf.workloads.Window.Glasspane;
 
