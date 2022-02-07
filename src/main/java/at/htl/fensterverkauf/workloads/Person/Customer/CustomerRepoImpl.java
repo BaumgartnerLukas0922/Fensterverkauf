@@ -1,10 +1,11 @@
-package at.htl.fensterverkauf.workloads.Person;
+package at.htl.fensterverkauf.workloads.Person.Customer;
 
+import javax.enterprise.context.ApplicationScoped;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
-import javax.swing.text.DefaultEditorKit;
 import java.util.List;
 
+@ApplicationScoped
 public class CustomerRepoImpl implements CustomerRepo {
 
     private final EntityManager entityManager;
