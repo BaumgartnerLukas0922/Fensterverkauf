@@ -40,7 +40,6 @@ public class Framebar {
     }
     //endregion
 
-
     @Override
     public String toString() {
         return "Framebar{" +

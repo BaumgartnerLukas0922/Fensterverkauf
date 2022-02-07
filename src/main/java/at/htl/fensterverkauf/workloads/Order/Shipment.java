@@ -11,7 +11,7 @@ import java.time.LocalDate;
 public class Shipment {
 
     @Id
-    int shippmentId;
+    int shipmentId;
 
     @ManyToOne
     Driver driver;
@@ -34,7 +34,6 @@ public class Shipment {
     //endregion
 
     //region Getter & Setter
-
     public Driver getDriver() {
         return driver;
     }
@@ -58,15 +57,12 @@ public class Shipment {
     public void setDate(LocalDate date) {
         this.date = date;
     }
-
-
     //endregion
-
 
     @Override
     public String toString() {
-        return "Shippment{" +
-                "shippmentId=" + shippmentId +
+        return "Shipment{" +
+                "shipmentId=" + shipmentId +
                 ", driver=" + driver +
                 ", lkw=" + lkw +
                 ", date=" + date +

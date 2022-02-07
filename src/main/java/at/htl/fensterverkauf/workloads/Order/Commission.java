@@ -16,7 +16,6 @@ public class Commission {
     Location location;
 
     //region Constructor
-
     public Commission(Shipment shipment, Location location) {
         this.shipment = shipment;
         this.location = location;
@@ -45,7 +44,6 @@ public class Commission {
     }
 
     //endregion
-
 
     @Override
     public String toString() {
