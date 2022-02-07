@@ -2,19 +2,18 @@ package at.htl.fensterverkauf.workloads.Order;
 
 import at.htl.fensterverkauf.workloads.Person.Customer;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 @Entity
 public class Location {
 
     @Id
-    int locationId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int locationId;
 
-    String address;
+    private String address;
     @ManyToOne
-    Customer customer;
+    private Customer customer;
 
     //region Constructor
 
