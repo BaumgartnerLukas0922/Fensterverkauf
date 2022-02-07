@@ -1,11 +1,10 @@
 package at.htl.fensterverkauf.api;
 
-import at.htl.fensterverkauf.workloads.Person.Customer;
-import at.htl.fensterverkauf.workloads.Person.CustomerRepoImpl;
+import at.htl.fensterverkauf.workloads.Person.Customer.Customer;
+import at.htl.fensterverkauf.workloads.Person.Customer.CustomerRepoImpl;
 import io.quarkus.qute.CheckedTemplate;
 import io.quarkus.qute.TemplateInstance;
 
-import javax.persistence.EntityManager;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;

@@ -1,4 +1,4 @@
-package at.htl.fensterverkauf.workloads.Person;
+package at.htl.fensterverkauf.workloads.Person.Customer;
 
 import java.util.List;
 
