@@ -1,4 +1,6 @@
-package at.htl.fensterverkauf.workloads.Person;
+package at.htl.fensterverkauf.workloads.Person.Driver;
+
+import at.htl.fensterverkauf.workloads.Person.Employee;
 
 import javax.persistence.Entity;
 

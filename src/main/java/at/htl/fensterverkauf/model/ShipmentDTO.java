@@ -1,7 +1,7 @@
 package at.htl.fensterverkauf.model;
 
-import at.htl.fensterverkauf.workloads.Order.Lkw;
-import at.htl.fensterverkauf.workloads.Person.Driver;
+import at.htl.fensterverkauf.workloads.Order.Lkw.Lkw;
+import at.htl.fensterverkauf.workloads.Person.Driver.Driver;
 
 import java.time.LocalDate;
 

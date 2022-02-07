@@ -2,18 +2,19 @@ package at.htl.fensterverkauf.api;
 
 import at.htl.fensterverkauf.workloads.Order.Commission.Commission;
 import at.htl.fensterverkauf.workloads.Order.Commission.CommissionRepo;
-import at.htl.fensterverkauf.workloads.Order.Lkw;
+import at.htl.fensterverkauf.workloads.Order.Lkw.Lkw;
+import at.htl.fensterverkauf.workloads.Order.Lkw.LkwRepo;
 import at.htl.fensterverkauf.workloads.Order.Location.Location;
 import at.htl.fensterverkauf.workloads.Order.Location.LocationRepo;
 import at.htl.fensterverkauf.workloads.Order.Shipment.Shipment;
 import at.htl.fensterverkauf.workloads.Order.Shipment.ShipmentRepo;
 import at.htl.fensterverkauf.workloads.Person.Customer.Customer;
-import at.htl.fensterverkauf.workloads.Person.Driver;
+import at.htl.fensterverkauf.workloads.Person.Customer.CustomerRepo;
+import at.htl.fensterverkauf.workloads.Person.Driver.Driver;
+import at.htl.fensterverkauf.workloads.Person.Driver.DriverRepo;
 import io.quarkus.qute.CheckedTemplate;
 import io.quarkus.qute.TemplateInstance;
 
-import javax.inject.Inject;
-import javax.persistence.EntityManager;
 import javax.transaction.Transactional;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
@@ -27,18 +28,22 @@ import java.util.List;
 @Path("commission")
 public class CommissionResource {
 
-    @Inject
-    EntityManager entityManager;
-
     private final CommissionRepo cRepo;
+    private final CustomerRepo cusRepo;
     private final ShipmentRepo sRepo;
     private final LocationRepo lRepo;
+    private final DriverRepo dRepo;
+    private final LkwRepo lkwRepo;
 
-    public CommissionResource(CommissionRepo crepo, ShipmentRepo sRepo, LocationRepo lRepo) {
-        this.cRepo = crepo;
+    public CommissionResource(CommissionRepo cRepo, CustomerRepo cusRepo, ShipmentRepo sRepo, LocationRepo lRepo, DriverRepo dRepo, LkwRepo lkwRepo) {
+        this.cRepo = cRepo;
+        this.cusRepo = cusRepo;
         this.sRepo = sRepo;
         this.lRepo = lRepo;
+        this.dRepo = dRepo;
+        this.lkwRepo = lkwRepo;
     }
+
 
     @CheckedTemplate
     public static class Templates {
@@ -54,16 +59,16 @@ public class CommissionResource {
     public Response getAll() {
         Commission commission = new Commission();
         Customer customer = new Customer("Lukas","Baum");
-        entityManager.persist(customer);
-        Location location = new Location("Teststraße",customer);
+        cusRepo.add(customer);
+        Location location = new Location("Teststreet",customer);
         lRepo.add(location);
         commission.setLocation(location);
         Driver driver =new Driver("Lukas","Lkw", 1.0,0,true,true);
-        entityManager.persist(driver);
-        Lkw lkw = new Lkw("Opel","Bliotz");
-        entityManager.persist(lkw);
+        dRepo.add(driver);
+        Lkw lkw = new Lkw("Opel","Blitz");
+        lkwRepo.add(lkw);
         Shipment shipment = new Shipment(driver,lkw,LocalDate.now());
-        entityManager.persist(shipment);
+        sRepo.add(shipment);
         commission.setShipment(shipment);
         cRepo.add(commission);
 

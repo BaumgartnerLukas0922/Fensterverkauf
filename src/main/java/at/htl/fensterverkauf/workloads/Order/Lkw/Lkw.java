@@ -1,4 +1,4 @@
-package at.htl.fensterverkauf.workloads.Order;
+package at.htl.fensterverkauf.workloads.Order.Lkw;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

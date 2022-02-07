@@ -15,7 +15,7 @@ public class CustomerRepoImpl implements CustomerRepo {
     }
 
     @Override
-    public void addCustomer(Customer customer) {
+    public void add(Customer customer) {
         this.entityManager.persist(customer);
     }
 
