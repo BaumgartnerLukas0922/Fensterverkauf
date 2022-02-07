@@ -1,16 +1,19 @@
 package at.htl.fensterverkauf.workloads.Person;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class Customer {
 
     @Id
-    int customerId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
 
-    String firstName;
-    String lastName;
+    private String firstName;
+    private String lastName;
 
     //region Constructor
 
@@ -47,7 +50,7 @@ public class Customer {
     @Override
     public String toString() {
         return "Customer{" +
-                "customerId=" + customerId +
+                "customerId=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 '}';
