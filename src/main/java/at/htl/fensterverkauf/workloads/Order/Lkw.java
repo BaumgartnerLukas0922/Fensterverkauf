@@ -10,7 +10,7 @@ public class Lkw {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int lkwId;
+    private int lkwId;
     private String brand;
     private String model;
 
