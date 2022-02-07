@@ -2,8 +2,10 @@ package at.htl.fensterverkauf.workloads.Order;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "F_LKW")
 public class Lkw {
 
     @Id

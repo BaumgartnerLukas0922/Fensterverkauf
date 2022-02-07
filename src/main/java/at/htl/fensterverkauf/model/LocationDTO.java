@@ -1,6 +1,6 @@
 package at.htl.fensterverkauf.model;
 
-import at.htl.fensterverkauf.workloads.Person.Customer;
+import at.htl.fensterverkauf.workloads.Order.Customer;
 
 public class LocationDTO {
 
