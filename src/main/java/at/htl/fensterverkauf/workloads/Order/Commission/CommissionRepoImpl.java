@@ -2,6 +2,7 @@ package at.htl.fensterverkauf.workloads.Order.Commission;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
 import java.util.List;
 
 @ApplicationScoped
@@ -29,6 +30,7 @@ public class CommissionRepoImpl implements CommissionRepo{
     }
 
     @Override
+    @Transactional
     public void add(Commission commission) {
         this.entityManager.persist(commission);
     }

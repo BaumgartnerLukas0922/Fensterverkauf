@@ -15,8 +15,7 @@ public class Lkw {
     private String model;
 
     //region Constructor
-    public Lkw(int lkwId, String brand, String model) {
-        this.lkwId = lkwId;
+    public Lkw( String brand, String model) {
         this.brand = brand;
         this.model = model;
     }

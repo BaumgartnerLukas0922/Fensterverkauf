@@ -57,6 +57,14 @@ public class Shipment {
     public void setDate(LocalDate date) {
         this.date = date;
     }
+
+    public int getShipmentId() {
+        return shipmentId;
+    }
+
+    public void setShipmentId(int shipmentId) {
+        this.shipmentId = shipmentId;
+    }
     //endregion
 
     @Override

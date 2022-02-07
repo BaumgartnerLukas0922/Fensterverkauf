@@ -1,7 +1,10 @@
 package at.htl.fensterverkauf.workloads.Order.Shipment;
 
+import at.htl.fensterverkauf.workloads.Order.Commission.Commission;
+
 import javax.enterprise.context.ApplicationScoped;
 import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
 
 @ApplicationScoped
 public class ShipmentRepoImpl implements ShipmentRepo{
@@ -19,4 +22,12 @@ public class ShipmentRepoImpl implements ShipmentRepo{
                 .setParameter("id",id);
         return query.getResultStream().findFirst().orElse(null);
     }
+
+    @Override
+    @Transactional
+    public void add(Shipment shipment){
+        this.entityManager.persist(shipment);
+    }
+
+
 }
