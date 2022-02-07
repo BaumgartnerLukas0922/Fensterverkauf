@@ -16,6 +16,6 @@ ifdef::backend-html5[]
 
 == Fensterverkauf Erd
 
-plantuml::plantuml/ERD.puml[]
+plantuml::plantuml/NewErd.puml[]
 
 
