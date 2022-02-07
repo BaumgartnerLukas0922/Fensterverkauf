@@ -1,16 +1,19 @@
 package at.htl.fensterverkauf.workloads.Window;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class Glasspane {
 
     @Id
-    int glasspaneId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int glasspaneId;
 
-    String dimension;
-    double thickness;
+    private String dimension;
+    private double thickness;
 
     //region Constructor
     public Glasspane(String dimension, double thickness) {
