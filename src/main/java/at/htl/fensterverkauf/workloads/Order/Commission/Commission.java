@@ -1,19 +1,18 @@
 package at.htl.fensterverkauf.workloads.Order;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 @Entity
 public class Commission {
 
     @Id
-    int commissionId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int commissionId;
 
     @ManyToOne
-    Shipment shipment;
+    private Shipment shipment;
     @ManyToOne
-    Location location;
+    private Location location;
 
     //region Constructor
     public Commission(Shipment shipment, Location location) {
@@ -47,10 +46,6 @@ public class Commission {
 
     @Override
     public String toString() {
-        return "Order{" +
-                "commissionId=" + commissionId +
-                ", shipment=" + shipment +
-                ", location=" + location +
-                '}';
+        return String.format("Order: %s %s",shipment.toString(),location.toString());
     }
 }

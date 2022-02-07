@@ -10,7 +10,7 @@ import java.util.List;
 public class Worker extends Employee {
 
     @OneToMany
-    List<Glasswindow> glasswindows;
+    private List<Glasswindow> glasswindows;
 
     //region Constructor
     public Worker(String firstName, String lastName, Double salary, int hours, List<Glasswindow> glasswindows) {

@@ -8,19 +8,20 @@ import javax.persistence.*;
 public class Glasswindow {
 
     @Id
-    int windowId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int windowId;
 
-    double width;
-    double height;
-
-    @ManyToOne
-    Framebar framebar;
+    private double width;
+    private double height;
 
     @ManyToOne
-    Glasspane glasspane;
+    private Framebar framebar;
 
     @ManyToOne
-    Commission commission;
+    private Glasspane glasspane;
+
+    @ManyToOne
+    private Commission commission;
 
     //region Constructor
 

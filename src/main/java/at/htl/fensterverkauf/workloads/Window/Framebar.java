@@ -1,19 +1,22 @@
 package at.htl.fensterverkauf.workloads.Window;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class Framebar {
 
     @Id
-    int framebarId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int framebarId;
 
-    String material;
-    int length;
+    private Material material;
+    private int length;
 
     //region Constructor
-    public Framebar(String material, int length) {
+    public Framebar(Material material, int length) {
         this.material = material;
         this.length = length;
     }
@@ -23,11 +26,11 @@ public class Framebar {
     //endregion
 
     //region Getter & Setter
-    public String getMaterial() {
+    public Material getMaterial() {
         return material;
     }
 
-    public void setMaterial(String material) {
+    public void setMaterial(Material material) {
         this.material = material;
     }
 

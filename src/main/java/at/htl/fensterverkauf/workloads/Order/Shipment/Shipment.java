@@ -2,23 +2,22 @@ package at.htl.fensterverkauf.workloads.Order;
 
 import at.htl.fensterverkauf.workloads.Person.Driver;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
 public class Shipment {
 
     @Id
-    int shipmentId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int shipmentId;
 
     @ManyToOne
-    Driver driver;
+    private Driver driver;
     @ManyToOne
-    Lkw lkw;
+    private Lkw lkw;
 
-    LocalDate date;
+    private LocalDate date;
 
     //region Constructor
 

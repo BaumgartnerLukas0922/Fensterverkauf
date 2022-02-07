@@ -1,20 +1,18 @@
 package at.htl.fensterverkauf.workloads.Person;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
+import javax.persistence.*;
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-public class Employee{
+public class Employee {
     @Id
-    int empNo;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int empNo;
 
-    String firstName;
-    String lastName;
-    Double salary;
-    int hours;
+    private String firstName;
+    private String lastName;
+    private Double salary;
+    private int hours;
 
     //region Constructor
     public Employee() {
@@ -65,12 +63,6 @@ public class Employee{
 
     @Override
     public String toString() {
-        return "Employee{" +
-                "empNo=" + empNo +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", salary=" + salary +
-                ", hours=" + hours +
-                '}';
+        return String.format("%s %s %d %d", firstName, lastName, salary, hours);
     }
 }

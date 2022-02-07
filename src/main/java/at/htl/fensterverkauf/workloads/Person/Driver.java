@@ -5,8 +5,8 @@ import javax.persistence.Entity;
 @Entity
 public class Driver extends Employee {
 
-    boolean hasDrivingLicense;
-    boolean curDriving;
+    private boolean hasDrivingLicense;
+    private boolean curDriving;
 
     //region Constructor
     public Driver(String firstName, String lastName, Double salary, int hours, boolean hasDrivingLicense, boolean curDriving) {
