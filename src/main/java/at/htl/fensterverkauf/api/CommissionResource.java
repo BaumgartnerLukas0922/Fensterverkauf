@@ -57,7 +57,8 @@ public class CommissionResource {
 
     }
 
-    public void addSingelCommissionForTesting(){
+    @Transactional
+    public Commission addSingelCommissionForTesting(){
         Commission commission = new Commission();
         Customer customer = new Customer("Lukas","Baum");
         cusRepo.add(customer);
@@ -72,13 +73,15 @@ public class CommissionResource {
         sRepo.add(shipment);
         commission.setShipment(shipment);
         cRepo.add(commission);
+        return commission;
     }
 
     @GET
     @Produces(MediaType.TEXT_HTML)
     @Path("{id}")
     public TemplateInstance get(@PathParam("id") int id) {
-        Commission commission = cRepo.findById(id);
+        //Commission commission = cRepo.findById(id);
+        Commission commission = addSingelCommissionForTesting();
         return Templates.commission(commission);
     }
 

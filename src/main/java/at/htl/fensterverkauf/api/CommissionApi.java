@@ -40,6 +40,7 @@ public class CommissionApi {
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
     @Transactional
+    @Path("create")
     public Response create(
             @Context UriInfo uriInfo
             , @FormParam("shipment") int shipmentId
