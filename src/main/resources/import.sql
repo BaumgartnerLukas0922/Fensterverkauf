@@ -19,6 +19,13 @@ values ('Glashaus', '12903', 20),
        ('Svarovski', '21620', 50),
        ('Gartner GmbH', '67687', 10);
 
+--framebar
+insert into framebar (length, material)
+values (200, 1),
+       (150, 4),
+       (50, 2),
+       (80, 5);
+
 /*
 insert into employee(firstname,lastname,salary,hours,hasdrivinglicense,curdriving)
 values ('Maxl','Musterkerlchen', 2400, 30, true, true),

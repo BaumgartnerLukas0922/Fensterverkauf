@@ -1,7 +1,12 @@
 package at.htl.fensterverkauf.workloads.Window;
 
 public enum Material {
-    HolzAlu,
-    KunststoffAlu,
-    Kunststoff
+    HolzNatura,
+    HolzAluSolid,
+    AluKunststoffPro,
+    AluminiumPlus,
+    AluminiumStandard,
+    KunststoffClassic,
+    KunststoffStandard,
+    KunststoffBlue
 }

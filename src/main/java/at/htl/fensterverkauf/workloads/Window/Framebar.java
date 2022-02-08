@@ -1,9 +1,6 @@
 package at.htl.fensterverkauf.workloads.Window;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Framebar {
@@ -12,6 +9,7 @@ public class Framebar {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int framebarId;
 
+    @Enumerated(EnumType.STRING)
     private Material material;
     private int length;
 
