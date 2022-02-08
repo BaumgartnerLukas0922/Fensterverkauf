@@ -11,6 +11,7 @@ public class Framebar {
 
     @Enumerated(EnumType.STRING)
     private Material material;
+
     private int length;
 
     //region Constructor

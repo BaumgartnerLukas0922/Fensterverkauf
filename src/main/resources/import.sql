@@ -26,6 +26,14 @@ values (200, 1),
        (50, 2),
        (80, 5);
 
+
+--glaspane
+insert into glasspane(dimension, thickness)
+VALUES ('200x200', 10),
+       ('150x200', 8),
+       ('100x200', 5);
+
+
 /*
 insert into employee(firstname,lastname,salary,hours,hasdrivinglicense,curdriving)
 values ('Maxl','Musterkerlchen', 2400, 30, true, true),
