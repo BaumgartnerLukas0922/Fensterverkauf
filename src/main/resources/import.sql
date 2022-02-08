@@ -1,9 +1,4 @@
--- This file allow to write SQL commands that will be emitted in test and dev.
--- The commands are commented as their support depends of the database
--- insert into myentity (id, field) values(nextval('hibernate_sequence'), 'field-1');
--- insert into myentity (id, field) values(nextval('hibernate_sequence'), 'field-2');
--- insert into myentity (id, field) values(nextval('hibernate_sequence'), 'field-3');
-
+--customer
 insert into customer(firstname, lastname)
 values ('Max', 'Muster'),
        ('Melanie', 'Muster'),
@@ -11,11 +6,19 @@ values ('Max', 'Muster'),
        ('Miriam', 'Mayr'),
        ('Ferdinand', 'Fröhlich');
 
+--lkw
 insert into lkw(brand, model)
 values ('Mercedes', 'Arcos'),
        ('Merceds', 'Amewi'),
        ('Volvo', 'FH16'),
        ('Volvo', 'FMX');
+
+--supplier
+insert into supplier(name, phonenumber, shipmentcost)
+values ('Glashaus', '12903', 20),
+       ('Svarovski', '21620', 50),
+       ('Gartner GmbH', '67687', 10);
+
 /*
 insert into employee(firstname,lastname,salary,hours,hasdrivinglicense,curdriving)
 values ('Maxl','Musterkerlchen', 2400, 30, true, true),
