@@ -1,4 +1,4 @@
-package at.htl.fensterverkauf.workloads.Person;
+package at.htl.fensterverkauf.workloads.Window;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
