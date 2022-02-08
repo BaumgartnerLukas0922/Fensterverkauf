@@ -2,14 +2,14 @@ package at.htl.fensterverkauf.api;
 
 import at.htl.fensterverkauf.workloads.Order.Commission.Commission;
 import at.htl.fensterverkauf.workloads.Order.Commission.CommissionRepo;
+import at.htl.fensterverkauf.workloads.Order.Customer.Customer;
+import at.htl.fensterverkauf.workloads.Order.Customer.CustomerRepo;
 import at.htl.fensterverkauf.workloads.Order.Lkw.Lkw;
 import at.htl.fensterverkauf.workloads.Order.Lkw.LkwRepo;
 import at.htl.fensterverkauf.workloads.Order.Location.Location;
 import at.htl.fensterverkauf.workloads.Order.Location.LocationRepo;
 import at.htl.fensterverkauf.workloads.Order.Shipment.Shipment;
 import at.htl.fensterverkauf.workloads.Order.Shipment.ShipmentRepo;
-import at.htl.fensterverkauf.workloads.Person.Customer.Customer;
-import at.htl.fensterverkauf.workloads.Person.Customer.CustomerRepo;
 import at.htl.fensterverkauf.workloads.Person.Driver.Driver;
 import at.htl.fensterverkauf.workloads.Person.Driver.DriverRepo;
 import io.quarkus.qute.CheckedTemplate;

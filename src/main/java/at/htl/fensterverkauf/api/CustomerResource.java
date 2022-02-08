@@ -1,7 +1,7 @@
 package at.htl.fensterverkauf.api;
 
-import at.htl.fensterverkauf.workloads.Person.Customer.Customer;
-import at.htl.fensterverkauf.workloads.Person.Customer.CustomerRepoImpl;
+import at.htl.fensterverkauf.workloads.Order.Customer.Customer;
+import at.htl.fensterverkauf.workloads.Order.Customer.CustomerRepoImpl;
 import io.quarkus.qute.CheckedTemplate;
 import io.quarkus.qute.TemplateInstance;
 

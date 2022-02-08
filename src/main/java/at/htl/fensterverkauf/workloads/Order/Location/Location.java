@@ -1,6 +1,6 @@
 package at.htl.fensterverkauf.workloads.Order.Location;
 
-import at.htl.fensterverkauf.workloads.Person.Customer.Customer;
+import at.htl.fensterverkauf.workloads.Order.Customer.Customer;
 
 import javax.persistence.*;
 
