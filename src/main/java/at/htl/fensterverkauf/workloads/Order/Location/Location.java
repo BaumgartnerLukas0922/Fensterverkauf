@@ -1,6 +1,6 @@
 package at.htl.fensterverkauf.workloads.Order.Location;
 
-import at.htl.fensterverkauf.workloads.Person.Customer.Customer;
+import at.htl.fensterverkauf.workloads.Order.Customer.Customer;
 
 import javax.persistence.*;
 
@@ -43,6 +43,14 @@ public class Location {
 
     public void setCustomer(Customer customer) {
         this.customer = customer;
+    }
+
+    public int getLocationId() {
+        return locationId;
+    }
+
+    public void setLocationId(int locationId) {
+        this.locationId = locationId;
     }
 
     //endregion

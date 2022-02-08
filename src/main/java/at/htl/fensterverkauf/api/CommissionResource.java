@@ -2,19 +2,21 @@ package at.htl.fensterverkauf.api;
 
 import at.htl.fensterverkauf.workloads.Order.Commission.Commission;
 import at.htl.fensterverkauf.workloads.Order.Commission.CommissionRepo;
+import at.htl.fensterverkauf.workloads.Order.Customer.Customer;
+import at.htl.fensterverkauf.workloads.Order.Customer.CustomerRepo;
 import at.htl.fensterverkauf.workloads.Order.Lkw.Lkw;
 import at.htl.fensterverkauf.workloads.Order.Lkw.LkwRepo;
 import at.htl.fensterverkauf.workloads.Order.Location.Location;
 import at.htl.fensterverkauf.workloads.Order.Location.LocationRepo;
 import at.htl.fensterverkauf.workloads.Order.Shipment.Shipment;
 import at.htl.fensterverkauf.workloads.Order.Shipment.ShipmentRepo;
-import at.htl.fensterverkauf.workloads.Person.Customer.Customer;
-import at.htl.fensterverkauf.workloads.Person.Customer.CustomerRepo;
 import at.htl.fensterverkauf.workloads.Person.Driver.Driver;
 import at.htl.fensterverkauf.workloads.Person.Driver.DriverRepo;
 import io.quarkus.qute.CheckedTemplate;
 import io.quarkus.qute.TemplateInstance;
+import io.vertx.ext.auth.impl.hash.SHA1;
 
+import javax.enterprise.context.RequestScoped;
 import javax.transaction.Transactional;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
@@ -25,6 +27,7 @@ import java.net.URI;
 import java.time.LocalDate;
 import java.util.List;
 
+@RequestScoped
 @Path("commission")
 public class CommissionResource {
 
@@ -48,15 +51,13 @@ public class CommissionResource {
     @CheckedTemplate
     public static class Templates {
         public static native TemplateInstance commissions(List<Commission> commissions);
+        public static native TemplateInstance commission(Commission commission);
         public static native TemplateInstance error(String msg);
+        public static native TemplateInstance addComm(List<Shipment> shipments, List<Location> locations);
 
     }
 
-    @GET
-    @Path("all")
-    @Produces(MediaType.TEXT_HTML)
-@Transactional
-    public Response getAll() {
+    public void addSingelCommissionForTesting(){
         Commission commission = new Commission();
         Customer customer = new Customer("Lukas","Baum");
         cusRepo.add(customer);
@@ -71,45 +72,26 @@ public class CommissionResource {
         sRepo.add(shipment);
         commission.setShipment(shipment);
         cRepo.add(commission);
-
-        return Response.ok(Templates.commissions(cRepo.getAll())).build();
     }
 
-    @POST
-    @Produces(MediaType.APPLICATION_JSON)
-    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+    @GET
+    @Produces(MediaType.TEXT_HTML)
+    @Path("{id}")
+    public TemplateInstance get(@PathParam("id") int id) {
+        Commission commission = cRepo.findById(id);
+        return Templates.commission(commission);
+    }
+
+
+
+    @GET
+    @Produces(MediaType.TEXT_HTML)
     @Transactional
-    @Path("add")
-    public Response add(
-            @Context UriInfo uriInfo
-            , @FormParam("shipment") int shipmentId
-            , @FormParam("location") int locationId
-    ) {
-        Shipment shipment = this.sRepo.findShipmentById(shipmentId);
-        Location location = this.lRepo.findById(locationId);
-
-        if (shipment == null) {
-            String message = "Shipment not found";
-            return Response
-                    .status(404)
-                    .entity(this.showError(message))
-                    .type(MediaType.TEXT_HTML_TYPE)
-                    .build();
-        }
-
-        if (location == null) {
-            String message = "Location not found";
-            return Response
-                    .status(404)
-                    .entity(this.showError(message))
-                    .type(MediaType.TEXT_HTML_TYPE)
-                    .build();
-        }
-        Commission commission = new Commission(shipment, location);
-        cRepo.add(commission);
-        return Response.status(301)
-                .location(URI.create("/all"))
-                .build();
+    public TemplateInstance addCommission() {
+        return Templates.addComm(
+                sRepo.getAll(),
+                lRepo.getAll()
+        );
     }
 
     @GET

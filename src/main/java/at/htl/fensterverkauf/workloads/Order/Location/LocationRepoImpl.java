@@ -5,6 +5,7 @@ import at.htl.fensterverkauf.workloads.Order.Commission.Commission;
 import javax.enterprise.context.ApplicationScoped;
 import javax.persistence.EntityManager;
 import javax.transaction.Transactional;
+import java.util.List;
 
 @ApplicationScoped
 public class LocationRepoImpl implements LocationRepo{
@@ -27,6 +28,11 @@ public class LocationRepoImpl implements LocationRepo{
     @Transactional
     public void add(Location location) {
         this.entityManager.persist(location);
+    }
+
+    @Override
+    public List<Location> getAll() {
+        return this.entityManager.createQuery("select l from Location l", Location.class).getResultList();
     }
 
 }
