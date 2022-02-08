@@ -5,6 +5,7 @@ import at.htl.fensterverkauf.workloads.Order.Commission.Commission;
 import javax.enterprise.context.ApplicationScoped;
 import javax.persistence.EntityManager;
 import javax.transaction.Transactional;
+import java.util.List;
 
 @ApplicationScoped
 public class ShipmentRepoImpl implements ShipmentRepo{
@@ -27,6 +28,11 @@ public class ShipmentRepoImpl implements ShipmentRepo{
     @Transactional
     public void add(Shipment shipment){
         this.entityManager.persist(shipment);
+    }
+
+    @Override
+    public List<Shipment> getAll() {
+        return this.entityManager.createQuery("select s from Shipment s",Shipment.class).getResultList();
     }
 
 

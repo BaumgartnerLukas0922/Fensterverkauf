@@ -19,6 +19,7 @@
     <tbody>
     {#for commission in commissions}
         <tr>
+        <td>{commission.getCommissionId()}</td>
         <td>{commission.getShipment().getShipmentId()}</td>
         <td>{commission.getLocation().getAddress()}</td>
         </tr>

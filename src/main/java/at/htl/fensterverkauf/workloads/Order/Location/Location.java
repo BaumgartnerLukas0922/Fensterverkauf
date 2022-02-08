@@ -45,6 +45,14 @@ public class Location {
         this.customer = customer;
     }
 
+    public int getLocationId() {
+        return locationId;
+    }
+
+    public void setLocationId(int locationId) {
+        this.locationId = locationId;
+    }
+
     //endregion
 
     @Override
