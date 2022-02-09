@@ -164,8 +164,40 @@
     <div class="w3-container w3-padding-32" id="order">
         <h3 style="font-size:250%" class="w3-border-bottom w3-border-light-grey w3-padding-16">Bestellung</h3>
         <p>Lets get in touch and talk about your next project.</p>
+
+        <form>
+            <p>Email eingeben:</p>
+            <textarea name="email" rows="1" cols="35"></textarea><br>
+
+        <label for="frames">Wähle einen Rahmen:</label>
+
+        <select name="frames" id="frames">
+            <option value="aluminium_Plus">Aluminium_Plus</option>
+            <option value="holz-Alu">Holz-Alu</option>
+            <option value="holz-natura">Holz-Natura</option>
+            <option value="Kunststoff-Classic">Kunststoff-Classic</option>
+        </select>
+
+        <label for="glass">Wähle ein Glas:</label>
+        <select name="glass" id="glasses">
+            <option value="aluminium_Plus">Milchglas</option>
+            <option value="holz-Alu">Panzerglas</option>
+            <option value="holz-natura">Zierglas</option>
+            <option value="holz-natura">Standardglas</option>
+        </select>
+
+        <label for="sizes">Wähle eine Größe:</label>
+
+        <select name="size" id="sizes">
+            <option value="aluminium_Plus">200x250</option>
+            <option value="holz-Alu">150x250</option>
+            <option value="holz-natura">100x200</option>
+            <option value="holz-natura">Other</option>
+        </select>
+
             <button class="w3-button w3-black w3-section" type="submit">
-                <i class="fa fa-paper-plane"></i><a href="/api/commission">BESTELLEN</a>
+                <i class="fa fa-paper-plane"></i>
+                <input type="submit" name="submitInfo" value="BESTELLEN">
             </button>
         </form>
     </div>
